@@ -128,3 +128,69 @@ class InstagramScreen extends StatelessWidget {
                 },
               ),
             ),
+            Divider(height: 1, color: Colors.grey),
+            ListView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: 20,
+              itemBuilder: (context, index) {
+                List<String> userNames = [
+                  'John Paul Santos',
+                  'Noel Gueco',
+                  'Russel Guisihan',
+                  'Santiago Quiambao',
+                  'Juan Dela Cruz',
+                  // Add more names as needed
+                ];
+
+                if (index >= 0 && index < userNames.length) {
+                  return Container(
+                    color: Colors.white,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ListTile(
+                          leading: CircleAvatar(
+                            radius: 20,
+                            backgroundImage: NetworkImage('https://source.unsplash.com/featured/?philippines'),
+                          ),
+                          title: Text(userNames[index]),
+                          subtitle: Text('Location $index'),
+                          trailing: const Icon(Icons.more_vert),
+                        ),
+                        Container(
+                          height: 300,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: NetworkImage('https://picsum.photos/400/300?random=$index'),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Row(
+                            children: [
+                              Icon(Icons.favorite_border),
+                              SizedBox(width: 8),
+                              Icon(Icons.comment),
+                              SizedBox(width: 8),
+                              Icon(Icons.send),
+                              Spacer(),
+                              Icon(Icons.bookmark_border),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 12.0),
+                          child: Text(
+                            'Liked by Alden, Eidrei, and 23 others',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        SizedBox(height: 4),
+                        Padding(
+                          padding: EdgeInsets.symmetric
+                            (horizontal: 12.0),
+                          child: Text('Love it. #NoelLangSakalam #Walang Forever'),
