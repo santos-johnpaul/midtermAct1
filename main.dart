@@ -194,3 +194,73 @@ class InstagramScreen extends StatelessWidget {
                           padding: EdgeInsets.symmetric
                             (horizontal: 12.0),
                           child: Text('Love it. #NoelLangSakalam #Walang Forever'),
+                         ),
+                        SizedBox(height: 8),
+                        Divider(height: 1, color: Colors.grey),
+                      ],
+                    ),
+                  );
+                } else {
+                  // Handle index out of range
+                  return SizedBox.shrink(); // or return an empty widget
+                }
+              },
+            ),
+          ],
+        ),
+      ),
+      appBar: AppBar(
+        title: Row(
+          children: [
+            Expanded(
+              child: Text(
+                'Instagram',
+                style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+              ),
+            ),
+            IconButton(
+              icon: Icon(Icons.favorite_border),
+              onPressed: () {
+                // Add onPressed logic for the heart icon
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.message),
+              onPressed: () {
+                // Add onPressed logic for the message icon
+              },
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IconButton(
+              icon: Icon(Icons.home),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: Icon(Icons.search),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: Icon(Icons.add_box),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: Icon(Icons.favorite_border),
+              onPressed: () {},
+            ),
+            CircleAvatar(
+              radius: 16,
+              backgroundImage: NetworkImage(
+                  'https://yt3.googleusercontent.com/ytc/AIf8zZR2NKwzfg09cmpTtQMgooVzxtXM1MeBvIKzt726Yg=s900-c-k-c0x00ffffff-no-rj'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
